@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export type MapDispatchToProps = {
-    setSelectedUser: (userLogin: string) => any
+    setSelectedUser: (user: ProfileFieldType) => any
 }
 
 export const PilotsList: React.FC<MapDispatchToProps> = (props) => {
@@ -91,9 +91,9 @@ export const PilotsList: React.FC<MapDispatchToProps> = (props) => {
 
         return (<List className={classes.pilotsList}>
             {pilots.map((pilot: ProfileFieldType, key: string | number | null | undefined) => (<ListItem className={classes.pilotsList__item}
-                key={pilot.userLogin}>
+                key={key}>
                 <Button fullWidth={true}
-                    onClick={() => props.setSelectedUser(pilot.userLogin)}>
+                    onClick={() => props.setSelectedUser(pilot)}>
                     <img src={profileIcon_Default} alt="logo" className={classes.pilotsList__item_icon} />
                     <Typography className={classes.pilotsList__item_fio}
                         variant='h6'>
