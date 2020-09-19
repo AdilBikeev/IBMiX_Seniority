@@ -41,7 +41,10 @@ export const profileReducer = (state = initialState, action: ActionsType): Initi
             }
         }
         case SET_SELECTED_USER: {
-            const selectedUser = state.pilots.find(pilot => pilot.userLogin === action.userLogin)
+            const selectedUser = state.pilots.find(pilot => 
+                                                            (!config.getDebugEnable() && pilot.userLogin === action.user.userLogin) ||
+                                                            pilot === action.user
+                                                            )
             return {
                 ...state,
                 seletedUser: selectedUser ? selectedUser : 

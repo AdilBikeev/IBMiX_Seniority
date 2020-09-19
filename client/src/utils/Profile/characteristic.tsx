@@ -32,8 +32,14 @@ const getDiffDate = (dateFrom: string, dateTo: number) => {
  * Возвращает конвертированное значение характеристики с ограничением.
  * @param character значение характеристики.
  */
-const convertCharacteristic = (character: number) => character >= maxCharacterValue ? maxCharacterValue :
+const convertCharacteristic = (character: number) => { 
+    
+    if (!character.toFixed) {
+        debugger
+    }
+    return character >= maxCharacterValue ? maxCharacterValue :
                                                                                       Number(character.toFixed(accuracy))
+}
 
 /**
  * Возвращает характеристики пилота.
