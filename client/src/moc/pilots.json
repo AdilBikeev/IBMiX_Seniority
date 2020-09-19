@@ -6,7 +6,7 @@
         "role": "КВС-инстр", 
         "standingFromDate": "2018-05-11",
         "standingFromDateInRole": "2020-05-11",
-        "reliabilityIndex": "3",
-        "rewardsAndPunishments": "5" 
+        "reliabilityIndex": 3,
+        "rewardsAndPunishments": 5
     }
 ]
